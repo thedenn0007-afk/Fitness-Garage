@@ -1,0 +1,135 @@
+/* ============================================================
+   GLOBALS — Fitness Garage | Monochrome Design System
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Barlow+Condensed:wght@400;600;700;800&display=swap');
+
+/* ── TOKENS ── */
+:root {
+  --black:   #070707;
+  --dark:    #111111;
+  --dark2:   #181818;
+  --dark3:   #222222;
+  --mid:     #3a3a3a;
+  --gray:    #b8b8b8;
+  --silver:  #d0d0d0;
+  --light:   #cecece;
+  --white:   #f4f4f4;
+  --border:  rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.16);
+
+  --ff-bb:  'Bebas Neue', cursive;
+  --ff-bar: 'Barlow', sans-serif;
+  --ff-con: 'Barlow Condensed', sans-serif;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--ff-bar);
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; border: none; }
+::-webkit-scrollbar       { width: 3px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--mid); }
+::selection { background: var(--white); color: var(--black); }
+
+/* ── SECTION WRAPPER ── */
+.section { padding: 112px 80px; }
+@media (max-width: 768px) { .section { padding: 72px 20px; } }
+
+/* ── SECTION LABEL ── */
+.lbl {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--ff-con); font-weight: 600;
+  font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--silver); margin-bottom: 14px;
+}
+.lbl::before {
+  content: ''; width: 28px; height: 1px;
+  background: var(--silver); flex-shrink: 0;
+}
+
+/* ── SECTION TITLE ── */
+.ttl {
+  font-family: var(--ff-bb);
+  font-size: clamp(44px, 5.5vw, 76px);
+  line-height: .92; letter-spacing: 1px;
+}
+.ttl .hi { color: var(--light); }
+
+/* ── SECTION HEADER ROW ── */
+.sec-hdr {
+  display: flex; justify-content: space-between;
+  align-items: flex-end; flex-wrap: wrap;
+  gap: 20px; margin-bottom: 56px;
+}
+.sec-hdr .note {
+  max-width: 300px; font-size: 14px;
+  color: var(--gray); line-height: 1.8;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--ff-con); font-weight: 700;
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 14px 36px; transition: all .3s; cursor: pointer;
+}
+.btn-fill {
+  background: var(--white); color: var(--black);
+  border: 1px solid var(--white);
+}
+.btn-fill:hover {
+  background: transparent; color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255,255,255,.1);
+}
+.btn-ghost {
+  background: transparent; color: var(--white);
+  border: 1px solid rgba(255,255,255,.22);
+}
+.btn-ghost:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,.04);
+  transform: translateY(-2px);
+}
+
+/* ── REVEAL ── */
+.rev {
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .8s cubic-bezier(.16,1,.3,1),
+              transform .8s cubic-bezier(.16,1,.3,1);
+}
+.rev.lft { transform: translateX(-40px); }
+.rev.rgt { transform: translateX(40px); }
+.rev.scl { transform: scale(.96); opacity: 0; transition-property: opacity,transform; }
+.rev.vis { opacity: 1 !important; transform: none !important; }
+
+/* ── TICKER ── */
+.ticker {
+  background: var(--dark2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0; overflow: hidden; white-space: nowrap;
+  user-select: none;
+}
+.ticker-track {
+  display: inline-block;
+  animation: tickAnim 26s linear infinite;
+}
+.ticker-track span {
+  font-family: var(--ff-bb); font-size: 13px;
+  letter-spacing: 5px; margin: 0 24px; color: var(--silver);
+}
+.ticker-track .sep { color: var(--mid); }
+@keyframes tickAnim { from{transform:translateX(0);} to{transform:translateX(-50%);} }

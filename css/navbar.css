@@ -1,0 +1,100 @@
+/* ============================================================
+   NAVBAR — Fitness Garage
+   ============================================================ */
+
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 80px; height: 70px;
+  transition: background .4s, border-color .4s;
+  border-bottom: 1px solid transparent;
+}
+#nav.stuck {
+  background: rgba(7,7,7,.95);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-color: var(--border);
+}
+
+/* ── Logo ── */
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  /* If logo image is provided, it replaces this */
+}
+/* Text logo fallback */
+.nav-logo-txt {
+  font-family: var(--ff-bb); font-size: 20px; letter-spacing: 3px;
+  color: var(--white); line-height: 1;
+}
+.nav-logo-txt span { color: var(--silver); }
+/* Image logo (shown when logo.png is placed in /images) */
+.nav-logo img {
+  height: 40px; width: auto;
+  display: none; /* set to block if logo image provided */
+}
+.nav-logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ── Nav links ── */
+.nav-ul {
+  display: flex; align-items: center; gap: 30px;
+}
+.nav-ul a {
+  font-family: var(--ff-con); font-weight: 600;
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gray); position: relative; transition: color .3s;
+}
+.nav-ul a::after {
+  content: ''; position: absolute;
+  bottom: -3px; left: 0; right: 0; height: 1px;
+  background: var(--white); transform: scaleX(0);
+  transform-origin: right; transition: transform .3s;
+}
+.nav-ul a:hover { color: var(--white); }
+.nav-ul a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.nav-cta {
+  background: var(--white) !important; color: var(--black) !important;
+  padding: 9px 22px !important; font-weight: 700 !important;
+  transition: opacity .3s !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { opacity: .85 !important; transform: none !important; }
+
+/* ── Hamburger ── */
+.ham {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; padding: 4px;
+}
+.ham span {
+  display: block; width: 24px; height: 1.5px;
+  background: var(--white); transition: all .3s;
+}
+.ham.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px,4.5px); }
+.ham.open span:nth-child(2) { opacity: 0; }
+.ham.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px,-4.5px); }
+
+/* ── Mobile drawer ── */
+.mob-menu {
+  position: fixed; inset: 0; z-index: 850;
+  background: rgba(7,7,7,.98);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 24px;
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+}
+.mob-menu.open { opacity: 1; pointer-events: auto; }
+.mob-menu a {
+  font-family: var(--ff-bb); font-size: 42px;
+  letter-spacing: 4px; color: rgba(255,255,255,.7);
+  transition: color .3s;
+}
+.mob-menu a:hover { color: var(--white); }
+
+@media (max-width: 900px) {
+  #nav     { padding: 0 20px; }
+  .nav-ul  { display: none; }
+  .ham     { display: flex; }
+}

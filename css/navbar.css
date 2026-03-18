@@ -17,25 +17,24 @@
 
 /* ── Logo ── */
 .nav-logo {
-  display: flex; align-items: center; gap: 10px;
-  /* If logo image is provided, it replaces this */
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-/* Text logo fallback */
+
 .nav-logo-txt {
   font-family: var(--ff-bb); font-size: 20px; letter-spacing: 3px;
   color: var(--white); line-height: 1;
 }
 .nav-logo-txt span { color: var(--silver); }
-/* Image logo (shown when logo.png is placed in /images) */
-.nav-logo img {
-  height: 40px; width: auto;
-  display: none; /* set to block if logo image provided */
-}
+
 .nav-logo-img {
-  height: 42px;
+  height: 44px;
   width: auto;
+  max-width: 160px;
   display: block;
   object-fit: contain;
+  object-position: left center;
 }
 
 /* ── Nav links ── */

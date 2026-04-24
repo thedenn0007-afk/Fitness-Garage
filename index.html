@@ -14,6 +14,7 @@
   <meta property="og:description" content="Join our revolution. Fuel your passion for fitness and find your strength within. State-of-the-art 2-floor gym in Kengeri Satellite Town." />
   <meta property="og:type"        content="website" />
   <meta property="og:site_name"   content="Fitness Garage" />
+  <meta property="og:image"       content="images/world-class.jpg" />
 
   <!-- Favicon — uses real logo -->
   <link rel="icon" href="images/logo1.png" type="image/png" />
@@ -21,6 +22,9 @@
 
   <!-- Chrome tab theme -->
   <meta name="theme-color" content="#070707" />
+
+  <!-- Preload hero background so it starts fetching before CSS is parsed -->
+  <link rel="preload" as="image" href="images/1.jpg" fetchpriority="high" />
 
   <!-- ── CSS ── -->
   <link rel="stylesheet" href="css/globals.css" />
@@ -173,12 +177,16 @@
 
     <!-- Image -->
     <div class="about-img-side rev lft">
-      <img
-        src="images/2.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80'"
-        alt="Fitness Garage gym floor"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/2.webp" type="image/webp" />
+        <img
+          src="images/2.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&q=80'"
+          alt="Fitness Garage gym floor"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
     </div>
 
     <!-- Text -->
@@ -483,52 +491,72 @@
 
     <!-- Real gym photos (1.jpg, 2.jpg, 3.jpg) with Unsplash fallbacks -->
     <div class="gal-item rev scl">
-      <img
-        src="images/1.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80'"
-        alt="Fitness Garage main floor"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/1.webp" type="image/webp" />
+        <img
+          src="images/1.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80'"
+          alt="Fitness Garage main floor"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="gal-ov"><span class="gal-lbl">Main Floor</span></div>
     </div>
 
     <div class="gal-item rev scl">
-      <img
-        src="images/2.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&q=80'"
-        alt="Fitness Garage equipment area"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/2.webp" type="image/webp" />
+        <img
+          src="images/2.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&q=80'"
+          alt="Fitness Garage equipment area"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="gal-ov"><span class="gal-lbl">Equipment Zone</span></div>
     </div>
 
     <div class="gal-item rev scl">
-      <img
-        src="images/cardio.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80'"
-        alt="Fitness Garage cardio area"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/cardio.webp" type="image/webp" />
+        <img
+          src="images/cardio.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80'"
+          alt="Fitness Garage cardio area"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="gal-ov"><span class="gal-lbl">Cardio Zone</span></div>
     </div>
 
     <div class="gal-item rev scl">
-      <img
-        src="images/group-classes1.jpg"
-        onerror="this.src='https://plus.unsplash.com/premium_photo-1664109999481-92084fb559d5?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'"
-        alt="Group class"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/group-classes1.webp" type="image/webp" />
+        <img
+          src="images/group-classes1.jpg"
+          onerror="this.src='https://plus.unsplash.com/premium_photo-1664109999481-92084fb559d5?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'"
+          alt="Group class"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="gal-ov"><span class="gal-lbl">Group Classes</span></div>
     </div>
 
     <div class="gal-item rev scl">
-      <img
-        src="images/personal1.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&q=80'"
-        alt="Personal training"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/personal1.webp" type="image/webp" />
+        <img
+          src="images/personal1.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&q=80'"
+          alt="Personal training"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="gal-ov"><span class="gal-lbl">Personal Training</span></div>
     </div>
 
@@ -538,42 +566,58 @@
   <div class="gal-grid-2">
 
     <div class="gal-item rev scl">
-      <img
-        src="images/4.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80'"
-        alt="Fitness Garage training area"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/4.webp" type="image/webp" />
+        <img
+          src="images/4.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80'"
+          alt="Fitness Garage training area"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="gal-ov"><span class="gal-lbl">Training Area</span></div>
     </div>
 
     <div class="gal-item rev scl">
-      <img
-        src="images/5.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'"
-        alt="Fitness Garage free weights"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/5.webp" type="image/webp" />
+        <img
+          src="images/5.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'"
+          alt="Fitness Garage free weights"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="gal-ov"><span class="gal-lbl">Free Weights</span></div>
     </div>
 
     <div class="gal-item rev scl">
-      <img
-        src="images/6.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&q=80'"
-        alt="Fitness Garage strength zone"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/6.webp" type="image/webp" />
+        <img
+          src="images/6.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=600&q=80'"
+          alt="Fitness Garage strength zone"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="gal-ov"><span class="gal-lbl">Strength Zone</span></div>
     </div>
 
     <div class="gal-item rev scl">
-      <img
-        src="images/7.jpg"
-        onerror="this.src='https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&q=80'"
-        alt="Fitness Garage powerlifting"
-        loading="lazy"
-      />
+      <picture>
+        <source srcset="images/7.webp" type="image/webp" />
+        <img
+          src="images/7.jpg"
+          onerror="this.src='https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&q=80'"
+          alt="Fitness Garage powerlifting"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
       <div class="gal-ov"><span class="gal-lbl">Powerlifting</span></div>
     </div>
 
@@ -596,12 +640,16 @@
   <h2 id="fac-ttl" class="ttl rev">WORLD-CLASS <span class="hi">FACILITIES</span></h2>
 
   <div class="fac-feat rev">
-    <img
-      src="images/world-class.jpg"
-      onerror="this.src='https://images.unsplash.com/photo-1637666133087-23b7138ea721?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'"
-      alt="Fitness Garage gym interior"
-      loading="lazy"
-    />
+    <picture>
+      <source srcset="images/world-class.webp" type="image/webp" />
+      <img
+        src="images/world-class.jpg"
+        onerror="this.src='https://images.unsplash.com/photo-1637666133087-23b7138ea721?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'"
+        alt="Fitness Garage gym interior"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
   </div>
 
   <div class="fac-grid">
@@ -723,7 +771,7 @@ Bengaluru, Karnataka 560036</div>
           <div class="ct-lbl">Phone / WhatsApp</div>
           <div class="ct-val">
             <a href="tel:+918951544738">+91 89515 44738</a><br>
-            <a href="tel:+918951544738">+91 63645 69090</a><br>
+            <a href="tel:+916364569090">+91 63645 69090</a><br>
             <a href="tel:+916364001718">+91 63640 01718</a>
           </div>
         </div>
@@ -872,7 +920,7 @@ Bengaluru, Karnataka 560036</div>
       <div class="ft-col-ttl">Contact</div>
       <div class="ft-links">
         <a href="tel:+918951544738"><span class="arr">→</span>89515 44738</a>
-        <a href="tel:+918951544738"><span class="arr">→</span>63645 69090</a>
+        <a href="tel:+916364569090"><span class="arr">→</span>63645 69090</a>
         <a href="tel:+916364001718"><span class="arr">→</span>63640 01718</a>
         <a href="mailto:Fitnessgarage23@gmail.com"><span class="arr">→</span>Fitnessgarage23@gmail.com</a>
         <a href="https://www.instagram.com/fitness_garage2023" target="_blank"><span class="arr">→</span>@fitness_garage2023</a>
